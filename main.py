@@ -1,13 +1,33 @@
-names_and_bid_dic = {}
+from art import LOGO
+print(LOGO)
+#In case of the more than one same highest bidsL: First bid received wins
+def highest_bidder():
+    highest_bid = 0
+    winner = ""
+    for bidder in bids:
+        bidder_ask = bids[bidder]
+        if bidder_ask > highest_bid:
+            highest_bid = bidder_ask
+            winner = bidder
+    print(f"The winner is {winner} with the highest bid {highest_bid}")
+#or
+#highest_value_key = max(bids, key=bids.get)
+#bids[highest_value_key] - gives the highest value..
 
-again='yes'
-while(again=="yes"):
+
+bids = {}
+ongoing=True
+
+while(ongoing):
     name = input("What is your name: ")
     bid = int(input("What is your bid: $"))
-    names_and_bid_dic[name] = bid
-    again = input("Are there any other bidders? Type 'yes' or 'no': ")
-    if again=='yes':
-        print('\n'*100)
-#todo - find the largest bidder and print it to the screeen
-# for key in names_and_bid_dic:
-#     if names_and_bid_dic[key]
+    bids[name] = bid
+    again = input("Are there any other bidders? Type 'yes' or 'no': ").lower()
+    if again=='no':
+        ongoing=False
+        highest_bidder()
+    elif again=='yes':
+        print('\n' * 20)
+
+
+
