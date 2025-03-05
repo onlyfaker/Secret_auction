@@ -9,5 +9,5 @@ while(again=="yes"):
     if again=='yes':
         print('\n'*100)
 #todo - find the largest bidder and print it to the screeen
-for key in names_and_bid_dic:
-    if names_and_bid_dic[key]>
+# for key in names_and_bid_dic:
+#     if names_and_bid_dic[key]
